@@ -20,6 +20,7 @@ int main(void)
 		glVertex2f(0.5f, -0.5f);
 		glEnd();
 		window.update();
+
 	}
 
 	return (0);
