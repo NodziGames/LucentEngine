@@ -2,6 +2,9 @@
 
 namespace lucent { namespace graphics {
 	
+	void window_resize(GLFWwindow *window, int width, int height);
+	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+
 	Window::Window(const char *title, int width, int height)
 	{
 		m_Title = title;
@@ -52,7 +55,7 @@ namespace lucent { namespace graphics {
 		}
 
 		glfwMakeContextCurrent(m_Window);
-		glfwSetWindowSizeCallback(m_Window, windowResize);
+		glfwSetWindowSizeCallback(m_Window, window_resize);
 
 		if (glewInit() != GLEW_OK)
 		{
@@ -65,9 +68,14 @@ namespace lucent { namespace graphics {
 		return (true);
 	}
 
-	void windowResize(GLFWwindow *window, int width, int height)
+	void window_resize(GLFWwindow *window, int width, int height)
 	{
 		glViewport(0, 0, width, height);
+	}
+
+	void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+	{
+
 	}
 
 } }
