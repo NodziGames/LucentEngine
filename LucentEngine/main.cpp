@@ -1,9 +1,11 @@
 #include "source\graphics\window.h"
+#include "source/maths/maths.h"
 
 int main(void)
 {
 	using namespace lucent;
 	using namespace graphics;
+	using namespace maths;
 
 	Window window("Lucent!", 960, 540);
 
@@ -13,12 +15,15 @@ int main(void)
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
 
+	vec2 vector(1.0f, 1.0f);
+	vec2 vectoor(1.0f, 1.0f);
+
 	while (!window.closed())
 	{
 		window.clear();
 		double x, y;
 		window.getMousePosition(x, y);
-		std::cout << x << "   :   " << y << std::endl;
+		std::cout << (vector == vectoor) << std::endl;
 		window.update();
 	}
 

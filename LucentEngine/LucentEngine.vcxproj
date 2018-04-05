@@ -134,9 +134,16 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="source\graphics\window.cpp" />
+    <ClCompile Include="source\maths\vec2.cpp" />
+    <ClCompile Include="source\maths\vec3.cpp" />
+    <ClCompile Include="source\maths\vec4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\graphics\window.h" />
+    <ClInclude Include="source\maths\maths.h" />
+    <ClInclude Include="source\maths\vec2.h" />
+    <ClInclude Include="source\maths\vec3.h" />
+    <ClInclude Include="source\maths\vec4.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
