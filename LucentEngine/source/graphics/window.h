@@ -11,18 +11,15 @@ namespace lucent { namespace graphics {
 
 	class Window
 	{
-	public:
-		static Window* INSTANCE;
-
 	private:
 		const char* m_Title;
 		int m_Width, m_Height;
 		GLFWwindow *m_Window;
 		bool m_Closed;
 
-		static bool m_Keys[MAX_KEYS];
-		static bool m_MouseButtons[MAX_BUTTONS];
-		static double mouse_x, mouse_y;
+		bool m_Keys[MAX_KEYS];
+		bool m_MouseButtons[MAX_BUTTONS];
+		double mouse_x, mouse_y;
 
 	public:
 		Window(const char *title, int width, int height);
@@ -33,10 +30,17 @@ namespace lucent { namespace graphics {
 
 	private:
 		bool init();
+		friend static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+		friend static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+		friend static void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
 
 	public:
 		inline int getWidth() const { return m_Width; }
 		inline int getHeight() const { return m_Height; }
+
+		bool isKeyPressed(unsigned int keycode) const;
+		bool isMouseButtonPressed(unsigned int button) const;
+		void getMousePosition(double &x, double &y) const;
 	};
 
 } }

@@ -16,7 +16,9 @@ int main(void)
 	while (!window.closed())
 	{
 		window.clear();
-		glDrawArrays(GL_ARRAY_BUFFER, 0, 6);
+		double x, y;
+		window.getMousePosition(x, y);
+		std::cout << x << "   :   " << y << std::endl;
 		window.update();
 	}
 
