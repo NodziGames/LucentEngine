@@ -1,5 +1,5 @@
 #include "source\graphics\window.h"
-#include "source/maths/maths.h"
+#include "source\maths\maths.h"
 
 int main(void)
 {
@@ -21,9 +21,7 @@ int main(void)
 	while (!window.closed())
 	{
 		window.clear();
-		double x, y;
-		window.getMousePosition(x, y);
-		std::cout << (vector == vectoor) << std::endl;
+		std::cout << (vector + vectoor) << std::endl;
 		window.update();
 	}
 

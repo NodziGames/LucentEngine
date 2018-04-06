@@ -80,22 +80,22 @@ namespace lucent { namespace maths {
 
 	vec4& vec4::operator+=(const vec4& rhs)
 	{
-		return (*this + rhs);
+		return add(rhs);
 	}
 
 	vec4& vec4::operator-=(const vec4& rhs)
 	{
-		return (*this - rhs);
+		return subtract(rhs);
 	}
 
 	vec4& vec4::operator*=(const vec4& rhs)
 	{
-		return (*this * rhs);
+		return multiply(rhs);
 	}
 
 	vec4& vec4::operator/=(const vec4& rhs)
 	{
-		return (*this / rhs);
+		return divide(rhs);
 	}
 
 	bool vec4::operator==(const vec4 &rhs)
